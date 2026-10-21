@@ -13,13 +13,18 @@
       };
       hostname = lib.mkOption {
         type = lib.types.str;
-        default = "nixos";
+        default = "Shinya";
         description = "System hostname";
+      };
+      prettyHostname = lib.mkOption {
+        type = lib.types.str;
+        default = config.var.hostname;
+        description = "System pretty hostname for UI and systemd";
       };
       dotfilesDir = lib.mkOption {
         type = lib.types.str;
-        default = "/home/${config.var.username}/mangoNix";
-        description = "Path to the mangoNix configuration directory";
+        default = "/home/${config.var.username}/ShinNix";
+        description = "Path to the ShinNix configuration directory";
       };
       timezone = lib.mkOption {
         type = lib.types.str;

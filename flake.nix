@@ -1,5 +1,5 @@
 {
-  description = "mangoNix flakes";
+  description = "ShinNix flakes";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -32,7 +32,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
   };
 

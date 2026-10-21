@@ -18,8 +18,8 @@
       };
     in
     {
-      nixpkgs.overlays = [
-        inputs.nix-cachyos-kernel.overlays.pinned
+      imports = [
+        inputs.chaotic.nixosModules.default
       ];
 
       boot = {
@@ -50,7 +50,7 @@
         # Kernel configuration
         kernelPackages =
           if config.var.kernel == "cachyos-bore" then
-            pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3
+            pkgs.linuxPackages_cachyos
           else if config.var.kernel == "zen" then
             pkgs.linuxPackages_zen
           else if config.var.kernel == "latest" then

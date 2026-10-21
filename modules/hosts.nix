@@ -22,6 +22,11 @@
 
   # Map discovered directories into nixosConfigurations
   discoveredConfigurations = inputs.nixpkgs.lib.mapAttrs (name: _: mkHost name (hostsDir + "/${name}")) hostDirs;
+
+  # Migration alias: allow initial transition rebuild when current running machine hostname is still "nixos"
+  compatConfigurations = if (discoveredConfigurations ? Shinya && !discoveredConfigurations ? nixos) then {
+    nixos = discoveredConfigurations.Shinya;
+  } else {};
 in {
-  flake.nixosConfigurations = discoveredConfigurations;
+  flake.nixosConfigurations = discoveredConfigurations // compatConfigurations;
 }

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # ==============================================================================
-# mangoNix - Post-Install System Bootstrapper
+# ShinNix - Post-Install System Bootstrapper
 # ==============================================================================
-# Interactive installer to bootstrap the mangoNix configuration on a fresh NixOS
+# Interactive installer to bootstrap the ShinNix configuration on a fresh NixOS
 # installation. Adapts user options, hardware config, and GPU profiles.
 # ==============================================================================
 
@@ -62,15 +62,14 @@ prompt_read() {
 clear 2>/dev/null || true
 echo -e "${YELLOW}"
 cat << "EOF"
-                                   _   _ _      
-  _ __ ___   __ _ _ __   __ _  ___| \ | (_)_  __
- | '_ ` _ \ / _` | '_ \ / _` |/ _ \  \| | \ \/ /
- | | | | | | (_| | | | | (_| | (_) | |\  | |>  < 
- |_| |_| |_|\__,_|_| |_|\__, |\___/|_| \_|_/_/\_\
-                        |___/                    
+  ____  _     _       _   _ _      
+ / ___|| |__ (_)_ __ | \ | (_)_  __
+ \___ \| '_ \| | '_ \|  \| | \ \/ /
+  ___) | | | | | | | | |\  | |>  < 
+ |____/|_| |_|_|_| |_|_| \_|_/_/\_\
 EOF
 echo -e "${NC}"
-echo -e "${WHITE}  --- mangoNix Post-Install Bootstrapper ---${NC}"
+echo -e "${WHITE}  --- ShinNix Post-Install Bootstrapper ---${NC}"
 echo -e "${CYAN}  Wayland Desktop with MangoWM, Noctalia Shell & Matugen${NC}"
 echo ""
 
@@ -102,7 +101,7 @@ fi
 
 TARGET_HOME="$(getent passwd "$TARGET_USER" 2>/dev/null | cut -d: -f6 || true)"
 TARGET_HOME="${TARGET_HOME:-/home/${TARGET_USER}}"
-TARGET_DIR="${TARGET_HOME}/mangoNix"
+TARGET_DIR="${TARGET_HOME}/ShinNix"
 
 # Sudo wrapper function
 run_sudo() {
@@ -129,9 +128,9 @@ if [ ${#MISSING_PKGS[@]} -gt 0 ]; then
         SCRIPT_PATH="$(realpath "${BASH_SOURCE[0]}" 2>/dev/null || readlink -f "${BASH_SOURCE[0]}")"
         exec nix-shell -p "${MISSING_PKGS[@]}" --run "bash \"$SCRIPT_PATH\" \"$@\""
     else
-        TMP_INSTALLER="$(mktemp /tmp/mangonix-installer.XXXXXX.sh)"
+        TMP_INSTALLER="$(mktemp /tmp/shinnix-installer.XXXXXX.sh)"
         info "Fetching installer script to ${TMP_INSTALLER}..."
-        curl -fsSL "https://raw.githubusercontent.com/Tiizzel/mangoNix/main/install.sh" > "$TMP_INSTALLER"
+        curl -fsSL "https://raw.githubusercontent.com/Tiizzel/ShinNix/main/install.sh" > "$TMP_INSTALLER"
         chmod +x "$TMP_INSTALLER"
         exec nix-shell -p "${MISSING_PKGS[@]}" --run "bash \"$TMP_INSTALLER\" \"$@\""
     fi
@@ -194,7 +193,7 @@ INPUT_USER=${INPUT_USER:-"$TARGET_USER"}
 
 # Recompute target paths based on chosen username
 TARGET_HOME="/home/${INPUT_USER}"
-TARGET_DIR="${TARGET_HOME}/mangoNix"
+TARGET_DIR="${TARGET_HOME}/ShinNix"
 
 # Compute display name default (capitalize first letter)
 DEFAULT_NAME="$(tr '[:lower:]' '[:upper:]' <<< "${INPUT_USER:0:1}")${INPUT_USER:1}"
@@ -202,9 +201,9 @@ question "Display / Full Name [${DEFAULT_NAME}]: "
 prompt_read INPUT_NAME
 INPUT_NAME=${INPUT_NAME:-"$DEFAULT_NAME"}
 
-question "System Hostname [nixos]: "
+question "System Hostname [Shinya]: "
 prompt_read INPUT_HOST
-INPUT_HOST=${INPUT_HOST:-"nixos"}
+INPUT_HOST=${INPUT_HOST:-"Shinya"}
 
 echo ""
 info "Available GPU profiles: amd, nvidia, intel, vm, generic"
@@ -264,7 +263,7 @@ fi
 # ------------------------------------------------------------------------------
 # 5. Clone or Setup Repository
 # ------------------------------------------------------------------------------
-print_header "Preparing mangoNix Repository"
+print_header "Preparing ShinNix Repository"
 
 # If script is run directly from the repo directory
 SCRIPT_DIR=""
@@ -274,9 +273,9 @@ fi
 
 if [ -z "$SCRIPT_DIR" ] || [ "$SCRIPT_DIR" != "$TARGET_DIR" ]; then
     if [ ! -d "$TARGET_DIR" ]; then
-        info "Cloning mangoNix into ${TARGET_DIR}..."
+        info "Cloning ShinNix into ${TARGET_DIR}..."
         run_sudo mkdir -p "$(dirname "$TARGET_DIR")"
-        git clone https://github.com/Tiizzel/mangoNix.git "$TARGET_DIR"
+        git clone https://github.com/Tiizzel/ShinNix.git "$TARGET_DIR"
     else
         info "Existing directory found at ${TARGET_DIR}."
     fi
@@ -327,8 +326,11 @@ cat << EOF > "${HOST_DIR}/variables.nix"
     # System hostname
     hostname = "${INPUT_HOST}";
 
-    # Path to the mangoNix configuration directory
-    dotfilesDir = "/home/\${config.var.username}/mangoNix";
+    # System pretty hostname
+    prettyHostname = "Shin'ya";
+
+    # Path to the ShinNix configuration directory
+    dotfilesDir = "/home/\${config.var.username}/ShinNix";
 
     # System timezone
     timezone = "${INPUT_TIMEZONE}";
@@ -384,10 +386,15 @@ cat << EOF > "$USER_CONFIG"
         default = "${INPUT_HOST}";
         description = "System hostname";
       };
+      prettyHostname = lib.mkOption {
+        type = lib.types.str;
+        default = config.var.hostname;
+        description = "System pretty hostname for UI and systemd";
+      };
       dotfilesDir = lib.mkOption {
         type = lib.types.str;
-        default = "/home/\${config.var.username}/mangoNix";
-        description = "Path to the mangoNix configuration directory";
+        default = "/home/\${config.var.username}/ShinNix";
+        description = "Path to the ShinNix configuration directory";
       };
       timezone = lib.mkOption {
         type = lib.types.str;
@@ -504,14 +511,14 @@ if run_sudo env NIX_CONFIG="extra-experimental-features = nix-command flakes" ni
         info "Configuring git remotes to use SSH (GitHub & GitLab)..."
         (
             cd "$TARGET_DIR" || exit 0
-            git remote set-url origin git@github.com:Tiizzel/mangoNix.git 2>/dev/null || true
-            git remote set-url --add --push origin git@github.com:Tiizzel/mangoNix.git 2>/dev/null || true
-            git remote set-url --add --push origin git@gitlab.com:Tiizzel/mangonix.git 2>/dev/null || true
-            git remote add github git@github.com:Tiizzel/mangoNix.git 2>/dev/null || git remote set-url github git@github.com:Tiizzel/mangoNix.git 2>/dev/null || true
-            git remote add gitlab git@gitlab.com:Tiizzel/mangonix.git 2>/dev/null || git remote set-url gitlab git@gitlab.com:Tiizzel/mangonix.git 2>/dev/null || true
-            git remote add all git@github.com:Tiizzel/mangoNix.git 2>/dev/null || true
-            git remote set-url --add --push all git@github.com:Tiizzel/mangoNix.git 2>/dev/null || true
-            git remote set-url --add --push all git@gitlab.com:Tiizzel/mangonix.git 2>/dev/null || true
+            git remote set-url origin git@github.com:Tiizzel/ShinNix.git 2>/dev/null || true
+            git remote set-url --add --push origin git@github.com:Tiizzel/ShinNix.git 2>/dev/null || true
+            git remote set-url --add --push origin git@gitlab.com:Tiizzel/shinnix.git 2>/dev/null || true
+            git remote add github git@github.com:Tiizzel/ShinNix.git 2>/dev/null || git remote set-url github git@github.com:Tiizzel/ShinNix.git 2>/dev/null || true
+            git remote add gitlab git@gitlab.com:Tiizzel/shinnix.git 2>/dev/null || git remote set-url gitlab git@gitlab.com:Tiizzel/shinnix.git 2>/dev/null || true
+            git remote add all git@github.com:Tiizzel/ShinNix.git 2>/dev/null || true
+            git remote set-url --add --push all git@github.com:Tiizzel/ShinNix.git 2>/dev/null || true
+            git remote set-url --add --push all git@gitlab.com:Tiizzel/shinnix.git 2>/dev/null || true
         )
         if [ -f "${TARGET_HOME}/.ssh/id_ed25519" ]; then
             ssh-keygen -y -f "${TARGET_HOME}/.ssh/id_ed25519" > "${TARGET_HOME}/.ssh/id_ed25519.pub" 2>/dev/null || true
@@ -534,7 +541,7 @@ print_header "Installation Finished!"
 
 cat << "EOF"
   ╔══════════════════════════════════════════════════════════════════╗
-  ║                mangoNix Installation Complete!                  ║
+  ║                 ShinNix Installation Complete!                 ║
   ║                                                                  ║
   ║   Keybindings Cheatsheet:                                        ║
   ║     • SUPER + Space     : Noctalia App Launcher                  ║

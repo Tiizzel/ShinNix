@@ -1,13 +1,13 @@
 # Host Variables & Configuration Guide
 
-This document explains how host-specific variables work in `mangoNix`, lists currently implemented options in [`hosts/<hostname>/variables.nix`](file:///home/tiizzel/mangoNix/hosts/nixos/variables.nix), and outlines planned variable modules for displays, hardware peripherals, feature stacks, and theming.
+This document explains how host-specific variables work in `ShinNix`, lists currently implemented options in [`hosts/<hostname>/variables.nix`](file:///home/tiizzel/ShinNix/hosts/Shinya/variables.nix), and outlines planned variable modules for displays, hardware peripherals, feature stacks, and theming.
 
 ---
 
 ## 1. Architecture Overview
 
-In `mangoNix`, every machine in the `hosts/` folder defines its identity and hardware characteristics in its own `variables.nix`.
-These options are registered under `options.var` in [`modules/users/user.nix`](file:///home/tiizzel/mangoNix/modules/users/user.nix) and consumed across NixOS modules (`config.var.<name>`) and Home Manager modules (`osConfig.var.<name>`).
+In `ShinNix`, every machine in the `hosts/` folder defines its identity and hardware characteristics in its own `variables.nix`.
+These options are registered under `options.var` in [`modules/users/user.nix`](file:///home/tiizzel/ShinNix/modules/users/user.nix) and consumed across NixOS modules (`config.var.<name>`) and Home Manager modules (`osConfig.var.<name>`).
 
 ```
 hosts/<hostname>/variables.nix  ──>  options.var  ──>  NixOS modules (config.var.*)
@@ -22,8 +22,9 @@ hosts/<hostname>/variables.nix  ──>  options.var  ──>  NixOS modules (co
 | :--- | :--- | :--- | :--- |
 | `username` | `str` | `"tiizzel"` | Primary user account login name |
 | `name` | `str` | `"Tiizzel"` | Display/GECOS name of user |
-| `hostname` | `str` | `"nixos"` | Machine hostname |
-| `dotfilesDir` | `str` | `"/home/${var.username}/mangoNix"` | Absolute path to mangoNix repo |
+| `hostname` | `str` | `"Shinya"` | Machine hostname |
+| `prettyHostname` | `str` | `"Shin'ya"` | System pretty hostname (systemd / UI) |
+| `dotfilesDir` | `str` | `"/home/${var.username}/ShinNix"` | Absolute path to ShinNix repo |
 | `timezone` | `str` | `"Europe/Berlin"` | System timezone |
 | `keyboardLayout` | `str` | `"de"` | X11 / Wayland keyboard layout |
 | `gpu` | `enum` | `"amd"` | Primary GPU profile (`"amd"`, `"nvidia"`, `"intel"`, `"vm"`, `"generic"`) |
@@ -38,7 +39,7 @@ hosts/<hostname>/variables.nix  ──>  options.var  ──>  NixOS modules (co
 
 ## 3. How Host-Specific Monitors Work
 
-In `mangoNix`, the dotfiles directory `dotfiles/mango` is symlinked out-of-store. To allow host-specific monitor configurations without editing git-tracked dotfiles:
+In `ShinNix`, the dotfiles directory `dotfiles/mango` is symlinked out-of-store. To allow host-specific monitor configurations without editing git-tracked dotfiles:
 
 1. **`hosts/<hostname>/variables.nix`**: Define your raw monitor rule strings:
    ```nix
@@ -140,9 +141,9 @@ var = {
 
 Here is how different machine configurations look side-by-side using these variables:
 
-| Setting | Desktop (`hosts/nixos/variables.nix`) | Laptop (`hosts/thinkpad/variables.nix`) |
+| Setting | Desktop (`hosts/Shinya/variables.nix`) | Laptop (`hosts/thinkpad/variables.nix`) |
 | :--- | :--- | :--- |
-| `hostname` | `"nixos"` | `"thinkpad"` |
+| `hostname` | `"Shinya"` | `"thinkpad"` |
 | `gpu` | `"amd"` | `"intel"` |
 | `kernel` | `"cachyos-bore"` | `"zen"` |
 | `bootloader` | `"grub"` | `"systemd-boot"` |

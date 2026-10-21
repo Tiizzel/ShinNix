@@ -11,7 +11,10 @@
     gitEmail = "adamdominik1996@gmail.com";
 
     # System hostname
-    hostname = "nixos";
+    hostname = "Shinya";
+
+    # System pretty hostname (systemd / UI)
+    prettyHostname = "Shin'ya";
 
     # System timezone
     timezone = "Europe/Berlin";
@@ -23,7 +26,7 @@
     gpu = "amd";
 
     # Linux kernel variant: "cachyos-bore" | "zen" | "latest" | "default"
-    kernel = "cachyos-bore";
+    kernel = "zen";
 
     # Bootloader: "grub" | "systemd-boot"
     bootloader = "grub";
