@@ -5,14 +5,14 @@ KITTY_CONF="${XDG_CONFIG_HOME:-$HOME/.config}/kitty/themes/noctalia.conf"
 MANGO_CONF="${XDG_CONFIG_HOME:-$HOME/.config}/mango/noctalia.conf"
 SETTINGS_CONF="${XDG_CONFIG_HOME:-$HOME/.config}/noctalia/settings.toml"
 YAZI_CONF="${XDG_CONFIG_HOME:-$HOME/.config}/yazi/flavors/noctalia.yazi/flavor.toml"
-MATUGEN_JSON="$HOME/mangoNix/dotfiles/matugen/colors.json"
+MATUGEN_JSON="$HOME/ShinNix/dotfiles/matugen/colors.json"
 
 apply_theme() {
   # Default Matugen values rendered from current wallpaper
-  PRIMARY="83d2e3"
-  SECONDARY="b1cbd1"
-  ON_PRIMARY="00363e"
-  ON_SECONDARY="1c3439"
+  PRIMARY="81d3df"
+  SECONDARY="b1cbcf"
+  ON_PRIMARY="00363c"
+  ON_SECONDARY="1c3437"
 
   # If Noctalia config is active, prefer Noctalia's exact active palette
   if [ -f "$KITTY_CONF" ]; then

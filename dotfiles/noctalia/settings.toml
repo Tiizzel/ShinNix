@@ -1,4 +1,4 @@
-config_version = 14
+config_version = 15
 
 [bar.default]
 background_opacity = 0.93999997898936272
@@ -153,7 +153,7 @@ enabled = [ "noctalia/wallhaven", "custom/nordvpn" ]
 
     [[plugins.source]]
     kind = "path"
-    location = "/home/tiizzel/mangoNix/dotfiles/noctalia/plugins"
+    location = "/home/tiizzel/ShinNix/dotfiles/noctalia/plugins"
     name = "local"
 
 [shell]
@@ -252,13 +252,13 @@ directory = "/home/tiizzel/Pictures/Wallpapers"
     recursive = true
 
     [wallpaper.default]
-    path = "/home/tiizzel/Pictures/Wallpapers/aishot-821.jpg"
+    path = "/home/tiizzel/Pictures/Wallpapers/aishot-3256.jpg"
 
     [wallpaper.last]
-    path = "/home/tiizzel/Pictures/Wallpapers/aishot-821.jpg"
+    path = "/home/tiizzel/Pictures/Wallpapers/aishot-3256.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/tiizzel/Pictures/Wallpapers/aishot-821.jpg"
+    path = "/home/tiizzel/Pictures/Wallpapers/aishot-3256.jpg"
 
 [widget.clock]
 capsule = true

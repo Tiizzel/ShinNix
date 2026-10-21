@@ -1,7 +1,7 @@
 {
   flake.aspects.base.nixos = { pkgs, ... }: let
     openrgb-wooting-sync = pkgs.writeShellScriptBin "openrgb-wooting-sync" ''
-      SCRIPT="$HOME/mangoNix/dotfiles/openrgb/apply-wooting-theme.sh"
+      SCRIPT="$HOME/ShinNix/dotfiles/openrgb/apply-wooting-theme.sh"
       if [ -f "$SCRIPT" ]; then
         exec bash "$SCRIPT" "$@"
       else

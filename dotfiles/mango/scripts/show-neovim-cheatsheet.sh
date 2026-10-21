@@ -6,7 +6,7 @@
 
 CHEATSHEET_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/mango/docs/neovim-cheatsheet.md"
 if [ ! -f "$CHEATSHEET_FILE" ]; then
-  CHEATSHEET_FILE="$HOME/mangoNix/docs/neovim-cheatsheet.md"
+  CHEATSHEET_FILE="$HOME/ShinNix/docs/neovim-cheatsheet.md"
 fi
 
 generate_entries() {

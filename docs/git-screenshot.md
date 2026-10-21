@@ -1,6 +1,6 @@
-# 📸 mangoNix — GitHub & GitLab Screenshot Showcase Guide
+# 📸 ShinNix — GitHub & GitLab Screenshot Showcase Guide
 
-This guide outlines the recommended screenshot gallery structure and provides a ready-to-use Markdown section to embed directly into your repository's [`README.md`](file:///home/tiizzel/mangoNix/README.md).
+This guide outlines the recommended screenshot gallery structure and provides a ready-to-use Markdown section to embed directly into your repository's [`README.md`](file:///home/tiizzel/ShinNix/README.md).
 
 ---
 
@@ -19,15 +19,15 @@ This guide outlines the recommended screenshot gallery structure and provides a 
 
 ## 📸 Capture Workflow
 
-Capture screenshots using built-in **mangoNix** hotkeys:
+Capture screenshots using built-in **ShinNix** hotkeys:
 * `SUPER + s`: Select region / window
 * `SUPER + CTRL + s`: Fullscreen capture
 * `SUPER + SHIFT + s`: Capture and annotate with Satty
 
 Recommended local directory for repository assets:
 ```bash
-mkdir -p ~/mangoNix/docs/assets
-# Save screenshots into ~/mangoNix/docs/assets/
+mkdir -p ~/ShinNix/docs/assets
+# Save screenshots into ~/ShinNix/docs/assets/
 ```
 
 ---
@@ -40,7 +40,7 @@ Copy the Markdown snippet below directly into your repository's `README.md`:
 ## 🎨 Desktop Showcase & Gallery
 
 <p align="center">
-  <img src="docs/assets/hero-desktop.png" alt="mangoNix Hero Desktop" width="100%">
+  <img src="docs/assets/hero-desktop.png" alt="ShinNix Hero Desktop" width="100%">
   <br>
   <em><b>Figure 1:</b> MangoWM tiling layout featuring Zen Browser, Ghostty, Neovim, and the Noctalia shell panel.</em>
 </p>

@@ -1,9 +1,9 @@
 {
-  flake.aspects.base.nixos = { config, ... }: {
-    # Enable official NordVPN daemon and graphical client service
+  flake.aspects.base.nixos = { config, lib, ... }: {
     services.nordvpn.enable = true;
-
-    # Allow primary user to manage connections without sudo
     users.users.${config.var.username}.extraGroups = [ "nordvpn" ];
+
+    systemd.sockets.nordvpnd.enable = false;
+    systemd.services.nordvpnd.serviceConfig.Requires = lib.mkForce null;
   };
 }

@@ -5,7 +5,7 @@
 
 KEYBINDS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/mango/cfg/keybinds.conf"
 if [ ! -f "$KEYBINDS_FILE" ]; then
-  KEYBINDS_FILE="$HOME/mangoNix/dotfiles/mango/cfg/keybinds.conf"
+  KEYBINDS_FILE="$HOME/ShinNix/dotfiles/mango/cfg/keybinds.conf"
 fi
 
 if [ ! -f "$KEYBINDS_FILE" ]; then

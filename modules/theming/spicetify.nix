@@ -24,6 +24,11 @@
         fi
         echo "$NOW" > "$LOCKFILE" 2>/dev/null || true
 
+        CLI_VER=$(${spicetifyCli} -v 2>/dev/null | ${pkgs.gnused}/bin/sed 's/^v//' || true)
+        if [ -n "$CLI_VER" ] && [ -f "$HOME/.config/spicetify/config-xpui.ini" ]; then
+          ${pkgs.gnused}/bin/sed -i "s/^with *= *.*/with    = $CLI_VER/" "$HOME/.config/spicetify/config-xpui.ini"
+        fi
+
         ${spicetifyCli} -q apply --no-restart 2>/dev/null || true
 
         if ${pkgs.curl}/bin/curl -s --connect-timeout 1 http://127.0.0.1:9222/json/list >/dev/null 2>&1; then
@@ -102,6 +107,11 @@ MimeType=x-scheme-handler/spotify;
 Categories=Audio;Music;Player;AudioVideo;
 StartupWMClass=spotify
 EOF
+
+            CLI_VER=$(${spicetifyCli} -v 2>/dev/null | ${pkgs.gnused}/bin/sed 's/^v//' || true)
+            if [ -n "$CLI_VER" ] && [ -f "$HOME/.config/spicetify/config-xpui.ini" ]; then
+              ${pkgs.gnused}/bin/sed -i "s/^with *= *.*/with    = $CLI_VER/" "$HOME/.config/spicetify/config-xpui.ini"
+            fi
 
             ${spicetifyCli} config spotify_path "$TARGET_DIR" 2>/dev/null || true
             ${spicetifyCli} -q apply --no-restart 2>/dev/null || true

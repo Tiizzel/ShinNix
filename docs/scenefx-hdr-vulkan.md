@@ -36,9 +36,9 @@ PR #204 solves this by:
 
 ---
 
-## 3. Impact on MangoWM & mangoNix
+## 3. Impact on MangoWM & ShinNix
 
-* **Current State in mangoNix**:
+* **Current State in ShinNix**:
   * Flake uses `inputs.mangowm.url = "github:mangowm/mango/wl-only"`
   * Environment sets `WLR_RENDERER=vulkan` and `ENABLE_HDR_WLR_EQ_1=1`
   * Displays run in pure 10-bit HDR on OLED (`DP-1`), but without SceneFX blur.
@@ -54,7 +54,7 @@ PR #204 solves this by:
 - [ ] **SceneFX PR #192**: Base Vulkan renderer merged into `wlrfx/scenefx`.
 - [ ] **SceneFX PR #204**: Vulkan blur merged into `wlrfx/scenefx`.
 - [ ] **MangoWM Upstream**: MangoWM updates dependencies to the new SceneFX Vulkan release, re-enabling blur on Vulkan sessions.
-- [ ] **mangoNix Flake**: Update flake input `mangowm` to the merged release.
+- [ ] **ShinNix Flake**: Update flake input `mangowm` to the merged release.
 
 ---
 

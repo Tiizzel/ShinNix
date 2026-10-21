@@ -26,7 +26,7 @@
     gpu = "amd";
 
     # Linux kernel variant: "cachyos-bore" | "zen" | "latest" | "default"
-    kernel = "zen";
+    kernel = "cachyos-bore";
 
     # Bootloader: "grub" | "systemd-boot"
     bootloader = "grub";

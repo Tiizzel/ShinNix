@@ -51,10 +51,10 @@
         Requires = [ "libretranslate.service" ];
       };
       Service = {
-        ExecStart = "${pkgs.python3}/bin/python3 ${config.home.homeDirectory}/mangoNix/modules/gaming/tclient-proxy.py";
+        ExecStart = "${pkgs.python3}/bin/python3 ${config.home.homeDirectory}/ShinNix/modules/gaming/tclient-proxy.py";
         Environment = [
-          "PROXY_CERT=${config.home.homeDirectory}/mangoNix/modules/gaming/certs/cert.pem"
-          "PROXY_KEY=${config.home.homeDirectory}/mangoNix/modules/gaming/certs/key.pem"
+          "PROXY_CERT=${config.home.homeDirectory}/ShinNix/modules/gaming/certs/cert.pem"
+          "PROXY_KEY=${config.home.homeDirectory}/ShinNix/modules/gaming/certs/key.pem"
           "PROXY_PORT=5001"
         ];
         Restart = "on-failure";
