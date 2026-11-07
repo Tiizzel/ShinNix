@@ -1,0 +1,18 @@
+# -----------------------------------------------------
+# Monitors
+# -----------------------------------------------------
+# Documentation: https://docs.noctalia.dev/umbriel/configuration/outputs/
+
+[output."DP-1"]
+mode = "5120x1440@240"
+position = [0, 0]
+scale = 1.0
+bit_depth = 10
+vrr = "always"
+tearing = true
+direct_scanout = true
+hdr = "on"
+sdr_white = 230.0
+sdr_transfer = "gamma22"
+workspaces = 6
+focus_at_startup = true

@@ -1,0 +1,29 @@
+# -----------------------------------------------------
+# Miscellaneous, General & Cursor Settings
+# -----------------------------------------------------
+# Documentation: https://docs.noctalia.dev/umbriel/configuration/general/
+
+[general]
+focus_on_activate = true
+attach_modal_dialogs = true
+honor_restored_maximize = true
+xwayland = true
+xwayland_native_resolution = true
+xwayland_primary_output = "DP-1"
+xwayland_xsettings = true
+
+[workspaces]
+back_and_forth = false
+
+[input.cursor]
+theme = "Bibata-Modern-Ice"
+size = 24
+hardware_cursor = true
+follows_focus = true
+hide_when_typing = false
+
+[input.drag_edge_scroll]
+enabled = true
+delay_ms = 100
+trigger_zone = 30
+max_speed = 1500.0

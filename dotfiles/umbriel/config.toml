@@ -1,0 +1,24 @@
+# Umbriel Main Configuration File
+# Documentation: https://docs.noctalia.dev/umbriel/
+# Noctalia Integration: https://docs.noctalia.dev/noctalia/theming/templates/builtin/compositors/#umbriel
+
+[include]
+files = [
+    "cfg/env.toml",
+    "cfg/colors.toml",
+    "cfg/autostart.toml",
+    "cfg/monitors.toml",
+    "cfg/layouts.toml",
+    "cfg/rules.toml",
+    "cfg/inputs.toml",
+    "cfg/misc.toml",
+    "cfg/keybinds.toml",
+    "cfg/appearance.toml",
+]
+
+# For Noctalia Color templates
+[include.optional]
+files = [
+  "noctalia.toml",
+]
+

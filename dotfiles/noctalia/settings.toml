@@ -1,13 +1,17 @@
-config_version = 15
+config_version = 19
+
+[audio]
+colorize_icons = true
 
 [bar.default]
-background_opacity = 0.93999997898936272
-border = "outline"
+background_opacity = 0.89999997988343239
+border = "outline_variant"
 border_width = 2.0
 capsule = true
 capsule_border = "on_primary"
 capsule_fill = "on_secondary"
 capsule_radius = "auto"
+contact_shadow = false
 end = [
     "tray",
     "custom/nordvpn:bar",
@@ -24,6 +28,7 @@ shadow = true
 start = [ "launcher", "wallpaper", "workspaces", "media" ]
 
 [dock]
+colorize_icons = true
 enabled = false
 
 [hooks]
@@ -45,11 +50,15 @@ behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
 
     [idle.behavior.screen-off]
     action = "screen_off"
-    enabled = false
+    enabled = true
     timeout = 180.0
+
+[location]
+address = "Hof, Deutschland"
 
 [lockscreen]
 blurred_desktop = true
+grace_period_seconds = 10
 
 [lockscreen_widgets]
 enabled = true
@@ -73,7 +82,7 @@ widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@DP-1", "
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -100,7 +109,7 @@ widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@DP-1", "
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@FALLBACK".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -135,6 +144,7 @@ widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@DP-1", "
 
 [notification]
 background_opacity = 0.84999998100101948
+colorize_icons = true
 offset_x = 200
 scale = 1.2500000111758709
 
@@ -157,10 +167,14 @@ enabled = [ "noctalia/wallhaven", "custom/nordvpn" ]
     name = "local"
 
 [shell]
-app_icon_colorize = true
 font_family = "JetBrainsMono Nerd Font Mono"
+polkit_colorize_icons = true
+screen_time_colorize_icons = true
 settings_window_translucent = false
 ui_scale = 1.3500000000000001
+
+    [shell.launcher]
+    colorize_icons = true
 
     [shell.panel]
     clipboard_position = "auto"
@@ -207,6 +221,9 @@ ui_scale = 1.3500000000000001
     [shell.shadow]
     alpha = 0.84999998100101948
 
+    [shell.window_switcher]
+    colorize_icons = true
+
 [theme]
 builtin = "Noctalia"
 community_palette = "Oxocarbon"
@@ -216,7 +233,7 @@ pure_black_dark = false
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "mango", "qt" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "mango", "qt", "umbriel" ]
     community_ids = [
         "antigravity",
         "claude-code",
@@ -252,13 +269,16 @@ directory = "/home/tiizzel/Pictures/Wallpapers"
     recursive = true
 
     [wallpaper.default]
-    path = "/home/tiizzel/Pictures/Wallpapers/aishot-3256.jpg"
+    path = "/home/tiizzel/Pictures/Wallpapers/wallhaven-4dmvqo.jpg"
 
     [wallpaper.last]
-    path = "/home/tiizzel/Pictures/Wallpapers/aishot-3256.jpg"
+    path = "/home/tiizzel/Pictures/Wallpapers/wallhaven-4dmvqo.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/tiizzel/Pictures/Wallpapers/aishot-3256.jpg"
+    path = "/home/tiizzel/Pictures/Wallpapers/wallhaven-4dmvqo.jpg"
+
+[widget.active_window]
+colorize_icons = true
 
 [widget.clock]
 capsule = true
@@ -276,6 +296,13 @@ max_length = 260
 show_progress = true
 title_scroll = "on_hover"
 
+[widget.taskbar]
+colorize_icons = true
+
+[widget.tray]
+colorize_icons = true
+
 [widget.workspaces]
+colorize_icons = true
 label_source = "name"
 max_label_chars = 4

@@ -24,6 +24,7 @@
       ".config/sddm".source = link "${dotDir}/sddm";
       ".config/Thunar".source = link "${dotDir}/thunar";
       ".config/thunar".source = link "${dotDir}/thunar";
+      ".config/umbriel".source = link "${dotDir}/umbriel";
       ".config/xdg-desktop-portal".source = link "${dotDir}/xdg-desktop-portal";
       ".config/yazi".source = link "${dotDir}/yazi";
       ".config/zen/profiles.ini".source = link "${dotDir}/zen/profiles.ini";

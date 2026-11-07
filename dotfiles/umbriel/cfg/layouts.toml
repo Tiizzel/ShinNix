@@ -1,0 +1,82 @@
+# -----------------------------------------------------
+# Layout Configurations
+# -----------------------------------------------------
+# Documentation: https://docs.noctalia.dev/umbriel/configuration/layout/
+
+[layout]
+mode = "scrolling"
+gap = 8
+# Optimized for 32:9 (5120x1440): 1/4 (1280px), 1/3 (1706px), 1/2 (2560px 16:9), 2/3, 3/4, full
+extent_presets = [0.25, 0.3333, 0.50, 0.6667, 0.75, 1.0]
+client_maximize = "column"
+
+# ==========================================================
+# SCROLLING LAYOUT
+# PaperWM-style infinite horizontal carousel
+# ==========================================================
+[layout.scrolling]
+default_extent_fraction = 0.5
+center_underfull_strip = true
+center_focused = "never"
+center_on_overview_select = true
+
+# ==========================================================
+# MASTER LAYOUT
+# Centered master-stack tiling (matching MangoWM center_tile)
+# ==========================================================
+[layout.master]
+position = "center"
+default_width_fraction = 0.5
+new_becomes_master = false
+new_on_top = true
+
+# ==========================================================
+# DWINDLE LAYOUT
+# Recursive BSP splitting
+# ==========================================================
+[layout.dwindle]
+preserve_split = true
+new_toward_cursor = true
+
+# ==========================================================
+# TABBED COLUMNS
+# ==========================================================
+[layout.tabs]
+default_display = "normal"
+middle_click_closes = true
+new_tab_position = "after_active"
+scroll_switches_tabs = true
+wrap_focus = true
+
+# ==========================================================
+# WORKSPACE DEFAULT LAYOUTS (1-3 Scrolling, 4-6 Master)
+# ==========================================================
+[[workspace]]
+index = 1
+output = "DP-1"
+layout.mode = "scrolling"
+
+[[workspace]]
+index = 2
+output = "DP-1"
+layout.mode = "scrolling"
+
+[[workspace]]
+index = 3
+output = "DP-1"
+layout.mode = "scrolling"
+
+[[workspace]]
+index = 4
+output = "DP-1"
+layout.mode = "master"
+
+[[workspace]]
+index = 5
+output = "DP-1"
+layout.mode = "master"
+
+[[workspace]]
+index = 6
+output = "DP-1"
+layout.mode = "master"

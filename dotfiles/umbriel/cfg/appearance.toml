@@ -1,0 +1,120 @@
+# -----------------------------------------------------
+# Appearance & Theming
+# -----------------------------------------------------
+# Documentation: https://docs.noctalia.dev/umbriel/configuration/appearance/
+# Animations:    https://docs.noctalia.dev/umbriel/configuration/animations/
+
+[appearance]
+prefer_no_csd = true
+border_width = 2
+corner_radius = 10
+opaque_fullscreen = true
+drag_opacity = 0.85
+
+[appearance.title_bar]
+mode = "off"
+
+[appearance.tab_bar]
+visible = true
+hide_when_single = true
+position = "top"
+style = "titles"
+height = 24
+padding = 8
+tab_gap = 2
+title_align = "center"
+
+[appearance.shadow]
+enabled = true
+softness = 12
+offset_x = 2
+offset_y = 2
+
+[appearance.blur]
+enabled = true
+optimized = true
+passes = 3
+radius = 8
+noise = 0
+brightness = 0.69
+contrast = 0.9
+saturation = 1.0
+
+# -----------------------------------------------------
+# Workspace Overview
+# -----------------------------------------------------
+[overview]
+background_blur = true
+workspace_wallpaper = true
+zoom = 0.5
+shortcuts = true
+
+# -----------------------------------------------------
+# Animation Curves & Springs (Tuned for 240Hz)
+# -----------------------------------------------------
+[animation]
+enabled = true
+duration_ms = 220
+curve = "easeOutQuint"
+
+[animation.beziers]
+easeOutQuint = [0.23, 1.0, 0.32, 1.0]
+easeInOutCubic = [0.65, 0.05, 0.36, 1.0]
+almostLinear = [0.5, 0.5, 0.75, 1.0]
+quick = [0.15, 0.0, 0.1, 1.0]
+
+[animation.springs]
+snappy = { damping = 0.95, stiffness = 850.0 }
+smooth = { damping = 1.0, stiffness = 700.0 }
+
+[animation.border]
+enabled = true
+curve = "easeOutQuint"
+duration_ms = 220
+
+[animation.windows_in]
+enabled = true
+style = "popin"
+scale = 0.87
+curve = "snappy"
+
+[animation.windows_out]
+enabled = true
+style = "popin"
+scale = 0.87
+curve = "easeOutQuint"
+duration_ms = 160
+
+[animation.windows_move]
+enabled = true
+curve = "snappy"
+
+[animation.windows_resize]
+enabled = true
+curve = "snappy"
+
+[animation.windows_opacity]
+enabled = true
+curve = "quick"
+duration_ms = 150
+
+[animation.layers]
+enabled = true
+curve = "easeOutQuint"
+duration_ms = 200
+
+[animation.workspaces]
+enabled = true
+style = "slide"
+curve = "smooth"
+
+[animation.overview]
+enabled = true
+curve = "snappy"
+workspace_curve = "smooth"
+
+[animation.scratchpad]
+enabled = true
+blur = true
+dim = 0.6
+curve = "snappy"

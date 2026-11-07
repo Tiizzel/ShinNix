@@ -1,6 +1,11 @@
 { inputs, ... }: {
   flake.aspects.base.nixos =
-    { pkgs, lib, config, ... }:
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     let
       distro-grub-theme = pkgs.stdenv.mkDerivation {
         pname = "distro-grub-themes-nixos";
@@ -49,7 +54,11 @@
 
         # Kernel configuration
         kernelPackages =
-          if config.var.kernel == "cachyos-bore" then
+          if config.var.kernel == "cachyos-lto" then
+            pkgs.linuxPackages_cachyos-lto
+          else if config.var.kernel == "cachyos-bore" then
+            pkgs.linuxPackages_cachyos-bore
+          else if config.var.kernel == "cachyos" then
             pkgs.linuxPackages_cachyos
           else if config.var.kernel == "zen" then
             pkgs.linuxPackages_zen

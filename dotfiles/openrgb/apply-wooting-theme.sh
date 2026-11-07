@@ -9,10 +9,10 @@ MATUGEN_JSON="$HOME/ShinNix/dotfiles/matugen/colors.json"
 
 apply_theme() {
   # Default Matugen values rendered from current wallpaper
-  PRIMARY="81d3df"
-  SECONDARY="b1cbcf"
-  ON_PRIMARY="00363c"
-  ON_SECONDARY="1c3437"
+  PRIMARY="f9bb72"
+  SECONDARY="dfc1a2"
+  ON_PRIMARY="472a00"
+  ON_SECONDARY="3f2d17"
 
   # If Noctalia config is active, prefer Noctalia's exact active palette
   if [ -f "$KITTY_CONF" ]; then

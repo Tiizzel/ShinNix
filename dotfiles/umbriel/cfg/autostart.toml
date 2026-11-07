@@ -1,0 +1,17 @@
+# -----------------------------------------------------
+# Autostart
+# -----------------------------------------------------
+
+[general]
+autostart = [
+    "noctalia",
+    "systemctl --user start polkit-gnome-authentication-agent-1",
+    "wl-clip-persist --clipboard regular --reconnect-tries 0",
+    "wl-paste --type text --watch cliphist store",
+    "zen-beta",
+    "vesktop",
+    "spotify",
+    "matugen-apply",
+    "openrgb-wooting-sync --watch",
+]
+

@@ -31,7 +31,7 @@ hosts/<hostname>/variables.nix  ──>  options.var  ──>  NixOS modules (co
 | `enableSops` | `bool` | `true` | Enable SOPS secrets decryption |
 | **`gitUsername`** | `str` | `config.var.name` | User name for Git commits |
 | **`gitEmail`** | `str` | `"adamdominik1996@gmail.com"` | Email address for Git commits |
-| **`kernel`** | `enum` | `"cachyos-bore"` | Kernel variant: `"cachyos-bore"`, `"zen"`, `"latest"`, `"default"` |
+| **`kernel`** | `enum` | `"cachyos"` | Kernel variant: `"cachyos"`, `"cachyos-lto"`, `"cachyos-bore"`, `"zen"`, `"latest"`, `"default"` |
 | **`bootloader`** | `enum` | `"grub"` | Bootloader: `"grub"` (themed) or `"systemd-boot"` |
 | **`monitorRules`** | `listOf str` | `[ "name:DP-1, ..." ]` | List of raw MangoWM `monitorrule` definitions |
 

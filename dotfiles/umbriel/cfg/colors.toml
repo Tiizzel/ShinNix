@@ -1,0 +1,9 @@
+# -----------------------------------------------------
+# Base Colors (Noctalia-aligned fallback)
+# -----------------------------------------------------
+
+[colors.border]
+focused = "#adccd3FF"
+unfocused = "#8b929366"
+outer = "#18120cFF"
+

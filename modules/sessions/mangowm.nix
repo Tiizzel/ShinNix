@@ -28,13 +28,4 @@
       SDL_VIDEODRIVER = "wayland,x11";
     };
   };
-
-  flake.aspects.base.home = { config, lib, osConfig, ... }: let
-    relDotfiles = lib.removePrefix "${config.home.homeDirectory}/" osConfig.var.dotfilesDir;
-  in {
-    home.file."${relDotfiles}/dotfiles/mango/cfg/mango-monitors.conf".text = ''
-      # Auto-generated monitor rules for host: ${osConfig.var.hostname}
-      ${lib.concatMapStringsSep "\n" (rule: "monitorrule = ${rule}") osConfig.var.monitorRules}
-    '';
-  };
 }

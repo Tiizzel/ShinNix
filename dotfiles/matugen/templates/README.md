@@ -8,10 +8,12 @@ This directory contains Matugen color templates.
   - `btop` (`btop.theme`)
   - `ghostty` (`ghostty`)
   - `gtk` (`gtk3.css`, `gtk4.css`)
+  - `hyprland` (`hyprland.conf`, `hyprland.lua`)
   - `kde` (`kcolorscheme.colors`)
   - `kitty` (`kitty.conf`)
   - `mango` (`mango.conf`)
   - `qt` (`qtct.conf`)
+  - `umbriel` (`umbriel.toml`)
 
 - `community/` — Templates copied from Noctalia's active community templates:
   - `antigravity`, `vscode`

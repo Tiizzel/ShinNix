@@ -1,0 +1,139 @@
+# -----------------------------------------------------
+# Window & Layer Rules
+# -----------------------------------------------------
+# Window Rules: https://docs.noctalia.dev/umbriel/configuration/window-rules/
+# Layer Rules:  https://docs.noctalia.dev/umbriel/configuration/layer-rules/
+
+# ==========================================================
+# LAYER RULES (Noctalia Shell Backdrop Blur)
+# ==========================================================
+[[layer_rule]]
+match.namespace = "^noctalia-(bar-[^\\\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\\\"]*)$"
+blur = true
+blur_optimized = true
+blur_ignore_alpha = 0.8
+blur_popups = true
+
+# ==========================================================
+# GLOBAL WINDOW DEFAULTS
+# ==========================================================
+[[window_rule]]
+opacity = 0.9
+blur = true
+blur_optimized = true
+shadow = true
+
+# Modal dialogs automatically float
+[[window_rule]]
+match.is_dialog = true
+default_floating = true
+
+# ==========================================================
+# FLOATING TOOLS & DIALOGS
+# ==========================================================
+[[window_rule]]
+match.app_id = "^([Ss]team)$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^([Ss]team)$"
+match.title = "^(Steam)$"
+default_floating = false
+
+[[window_rule]]
+match.app_id = "^(steam)$"
+match.title = "^(Steam Settings|Friends List)$"
+default_floating = true
+
+[[window_rule]]
+match.title = "^(Neovim Cheat Sheet)$"
+default_floating = true
+default_floating_size_px = { width = 1100, height = 760 }
+
+[[window_rule]]
+match.title = "^(WebApp Desktop Manager)$"
+default_floating = true
+default_floating_size_px = { width = 960, height = 640 }
+
+[[window_rule]]
+match.app_id = "^(webapp-manager)$"
+default_floating = true
+default_floating_size_px = { width = 960, height = 640 }
+
+[[window_rule]]
+match.app_id = "^(nix-search)$"
+default_floating = true
+default_floating_size_px = { width = 850, height = 520 }
+
+[[window_rule]]
+match.app_id = "^(pavucontrol|org\\.pulseaudio\\.pavucontrol)$"
+default_floating = true
+default_floating_size_px = { width = 900, height = 600 }
+
+# ==========================================================
+# PRIVACY & CAPTURE PROTECTION
+# ==========================================================
+# Mask password managers automatically during screencasts & screenshots
+[[window_rule]]
+match.app_id = "^([Bb]itwarden|com\\.bitwarden\\.desktop)$"
+block_capture = true
+default_floating = true
+default_floating_size_px = { width = 1000, height = 700 }
+
+# ==========================================================
+# TERMINALS
+# ==========================================================
+[[window_rule]]
+match.app_id = "^(com\\.mitchellh\\.ghostty|ghostty)$"
+opacity = 0.90
+
+[[window_rule]]
+match.app_id = "^(kitty)$"
+opacity = 0.95
+
+# ==========================================================
+# BROWSERS & MEDIA (Full Opacity, No Blur)
+# ==========================================================
+[[window_rule]]
+match.app_id = "^([Zz]en.*|[Ff]irefox.*|[Bb]rave.*|[Cc]hromium.*|[Gg]oogle-chrome.*|[Hh]elium.*)$"
+opacity = 1.0
+blur = false
+
+[[window_rule]]
+match.content_type = "video"
+opacity = 1.0
+blur = false
+
+# ==========================================================
+# GAMES (Full Opacity, No Blur, VRR, Tearing)
+# ==========================================================
+[[window_rule]]
+match.content_type = "game"
+opacity = 1.0
+blur = false
+vrr = "always"
+tearing = true
+allow_shortcuts_inhibit = true
+
+[[window_rule]]
+match.app_id = "^(steam_app_.*|.*\\.exe|[Gg]amescope|[Dd][Dd][Nn]et.*|[Tt]ater[Cc]lient.*)$"
+opacity = 1.0
+blur = false
+vrr = "always"
+tearing = true
+allow_shortcuts_inhibit = true
+
+# ==========================================================
+# WORKSPACE ASSIGNMENTS
+# ==========================================================
+[[window_rule]]
+match.app_id = "^([Zz]en.*)$"
+default_workspace = 1
+
+[[window_rule]]
+match.app_id = "^([Ss]potify.*)$"
+default_workspace = 2
+
+[[window_rule]]
+match.app_id = "^([Vv]esktop.*)$"
+default_workspace = 2

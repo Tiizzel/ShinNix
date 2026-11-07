@@ -1,0 +1,376 @@
+# -----------------------------------------------------
+# Keybindings
+# -----------------------------------------------------
+# Documentation: https://docs.noctalia.dev/umbriel/configuration/keybinds/
+# Noctalia IPC: https://docs.noctalia.dev/noctalia/ipc/
+
+[keybinds]
+
+# =========================================================
+# Applications
+# =========================================================
+# Launch Ghostty Terminal
+"Mod+T" = { action = "spawn ghostty", repeat = false }
+
+# Launch Zen Browser
+"Mod+B" = { action = "spawn zen-beta", repeat = false }
+
+# Open Thunar File Manager
+"Mod+F" = { action = "spawn thunar", repeat = false }
+
+# Launch Antigravity IDE
+"Mod+Z" = { action = "spawn antigravity-ide", repeat = false }
+
+# Open Yazi File Manager in Ghostty
+"Mod+Y" = { action = "spawn ghostty -e yazi", repeat = false }
+
+# Launch Kitty Terminal
+"Mod+Shift+T" = { action = "spawn kitty", repeat = false }
+
+# Audio Volume Control (pavucontrol)
+"Mod+Alt+M" = { action = "spawn pavucontrol", repeat = false }
+
+# =========================================================
+# Window Management
+# =========================================================
+# Close Active Window
+"Mod+Q" = { action = "window-close", repeat = false }
+
+# Force Close Window
+"Mod+Shift+Q" = { action = "window-kill", repeat = false }
+
+# Toggle Fullscreen Mode
+"Mod+Ctrl+F" = { action = "window-toggle-fullscreen", repeat = false }
+
+# Toggle Floating Mode
+"Mod+Shift+F" = { action = "window-toggle-floating", repeat = false }
+
+# Toggle Maximize Window
+"Mod+Shift+M" = { action = "window-toggle-maximize", repeat = false }
+
+# Pin Floating Window Across Workspaces
+"Mod+P" = { action = "window-toggle-pinned", repeat = false }
+
+# Toggle Workspace & Strip Overview
+"Mod+O" = { action = "overview-toggle", repeat = false }
+
+# Cycle Window Layout (Scrolling / Master / Dwindle)
+"Mod+Shift+I" = { action = "workspace-set-layout toggle scrolling master dwindle", repeat = false }
+
+# =========================================================
+# Scrolling & Column Operations (32:9 Ultrawide)
+# =========================================================
+# Center Focused Column on Screen
+"Mod+Alt+C" = { action = "column-center", repeat = false }
+
+# Toggle Tabbed Column Display
+"Mod+W" = { action = "column-toggle-tabbed", repeat = false }
+
+# Consume or Expel Window Left into/out of Column
+"Mod+BracketLeft" = "window-consume-or-expel-left"
+
+# Consume or Expel Window Right into/out of Column
+"Mod+BracketRight" = "window-consume-or-expel-right"
+
+# =========================================================
+# Window Navigation & Focus (Arrow Keys & Vi Keys)
+# =========================================================
+# Focus Window Left
+"Mod+Left" = "window-focus-left"
+
+# Focus Window Right
+"Mod+Right" = "window-focus-right"
+
+# Focus Window Up
+"Mod+Up" = "window-focus-up"
+
+# Focus Window Down
+"Mod+Down" = "window-focus-down"
+
+# Focus Window Left (Vi-style)
+"Mod+H" = "window-focus-left"
+
+# Focus Window Right (Vi-style)
+"Mod+L" = "window-focus-right"
+
+# Focus Window Up (Vi-style)
+"Mod+K" = "window-focus-up"
+
+# Focus Window Down (Vi-style)
+"Mod+J" = "window-focus-down"
+
+# =========================================================
+# Window Moving / Swapping (Arrow Keys & Vi Keys)
+# =========================================================
+# Swap Window Left
+"Mod+Shift+Left" = "window-swap-left"
+
+# Swap Window Right
+"Mod+Shift+Right" = "window-swap-right"
+
+# Swap Window Up
+"Mod+Shift+Up" = "window-swap-up"
+
+# Swap Window Down
+"Mod+Shift+Down" = "window-swap-down"
+
+# Swap Window Left (Vi-style)
+"Mod+Shift+H" = "window-swap-left"
+
+# Swap Window Right (Vi-style)
+"Mod+Shift+L" = "window-swap-right"
+
+# Swap Window Up (Vi-style)
+"Mod+Shift+K" = "window-swap-up"
+
+# Swap Window Down (Vi-style)
+"Mod+Shift+J" = "window-swap-down"
+
+# =========================================================
+# Workspaces (1 - 9)
+# =========================================================
+# Switch to Workspace 1
+"Mod+1" = "workspace-switch 1"
+
+# Switch to Workspace 2
+"Mod+2" = "workspace-switch 2"
+
+# Switch to Workspace 3
+"Mod+3" = "workspace-switch 3"
+
+# Switch to Workspace 4
+"Mod+4" = "workspace-switch 4"
+
+# Switch to Workspace 5
+"Mod+5" = "workspace-switch 5"
+
+# Switch to Workspace 6
+"Mod+6" = "workspace-switch 6"
+
+# Switch to Workspace 7
+"Mod+7" = "workspace-switch 7"
+
+# Switch to Workspace 8
+"Mod+8" = "workspace-switch 8"
+
+# Switch to Workspace 9
+"Mod+9" = "workspace-switch 9"
+
+# Move Window to Workspace 1
+"Mod+Shift+1" = "window-move-to-workspace 1"
+
+# Move Window to Workspace 2
+"Mod+Shift+2" = "window-move-to-workspace 2"
+
+# Move Window to Workspace 3
+"Mod+Shift+3" = "window-move-to-workspace 3"
+
+# Move Window to Workspace 4
+"Mod+Shift+4" = "window-move-to-workspace 4"
+
+# Move Window to Workspace 5
+"Mod+Shift+5" = "window-move-to-workspace 5"
+
+# Move Window to Workspace 6
+"Mod+Shift+6" = "window-move-to-workspace 6"
+
+# Move Window to Workspace 7
+"Mod+Shift+7" = "window-move-to-workspace 7"
+
+# Move Window to Workspace 8
+"Mod+Shift+8" = "window-move-to-workspace 8"
+
+# Move Window to Workspace 9
+"Mod+Shift+9" = "window-move-to-workspace 9"
+
+# Move Window Silently to Workspace 1
+"Mod+Ctrl+1" = "window-move-to-workspace-silent 1"
+
+# Move Window Silently to Workspace 2
+"Mod+Ctrl+2" = "window-move-to-workspace-silent 2"
+
+# Move Window Silently to Workspace 3
+"Mod+Ctrl+3" = "window-move-to-workspace-silent 3"
+
+# Move Window Silently to Workspace 4
+"Mod+Ctrl+4" = "window-move-to-workspace-silent 4"
+
+# Move Window Silently to Workspace 5
+"Mod+Ctrl+5" = "window-move-to-workspace-silent 5"
+
+# Move Window Silently to Workspace 6
+"Mod+Ctrl+6" = "window-move-to-workspace-silent 6"
+
+# Move Window Silently to Workspace 7
+"Mod+Ctrl+7" = "window-move-to-workspace-silent 7"
+
+# Move Window Silently to Workspace 8
+"Mod+Ctrl+8" = "window-move-to-workspace-silent 8"
+
+# Move Window Silently to Workspace 9
+"Mod+Ctrl+9" = "window-move-to-workspace-silent 9"
+
+# =========================================================
+# Resizing (Window / Column)
+# =========================================================
+# Shrink Window Width
+"Mod+Alt+Left" = "window-modify-primary-extent -0.05"
+
+# Expand Window Width
+"Mod+Alt+Right" = "window-modify-primary-extent 0.05"
+
+# Shrink Window Width (Vi-style)
+"Mod+Alt+H" = "window-modify-primary-extent -0.05"
+
+# Expand Window Width (Vi-style)
+"Mod+Alt+L" = "window-modify-primary-extent 0.05"
+
+# Previous Window Proportion Preset
+"Mod+Ctrl+Left" = "window-cycle-primary-extent-back"
+
+# Next Window Proportion Preset
+"Mod+Ctrl+Right" = "window-cycle-primary-extent"
+
+# Previous Window Proportion Preset (Vi-style)
+"Mod+Ctrl+H" = "window-cycle-primary-extent-back"
+
+# Next Window Proportion Preset (Vi-style)
+"Mod+Ctrl+K" = "window-cycle-primary-extent"
+
+# =========================================================
+# Special Workspace / Scratchpad
+# =========================================================
+# Toggle Scratchpad Workspace
+"Mod+N" = "scratchpad-toggle"
+
+# Move Window to Scratchpad Workspace
+"Mod+Shift+Space" = "window-move-to-scratchpad"
+
+# =========================================================
+# Shell & Desktop Actions (Noctalia IPC)
+# =========================================================
+# Toggle Noctalia App Launcher
+"Mod+Space" = "spawn noctalia msg panel-toggle launcher"
+
+# Toggle Noctalia App Launcher (Alternate)
+"Mod+Shift+Return" = "spawn noctalia msg panel-toggle launcher"
+
+# Toggle Wallpaper Picker
+"Mod+Shift+W" = "spawn noctalia msg panel-toggle wallpaper"
+
+# Wallhaven Wallpaper Browser
+"Mod+Ctrl+W" = "spawn noctalia msg panel-toggle noctalia/wallhaven:browser"
+
+# Window Switcher Overlay
+"Mod+Tab" = "spawn noctalia msg window-switcher"
+
+# Power & Session Menu
+"Mod+X" = "spawn noctalia msg panel-toggle session"
+
+# Control Center: Network
+"Mod+C" = "spawn noctalia msg panel-toggle control-center network"
+
+# Clipboard History Manager
+"Mod+V" = "spawn noctalia msg panel-toggle clipboard"
+
+# Control Center: Calendar
+"Mod+M" = "spawn noctalia msg panel-toggle control-center calendar"
+
+# Toggle Control Center
+"Mod+Shift+C" = "spawn noctalia msg panel-toggle control-center"
+
+# Toggle Control Center (Alternate)
+"Mod+Ctrl+R" = "spawn noctalia msg panel-toggle control-center"
+
+# Toggle Desktop Dock
+"Mod+D" = "spawn noctalia msg dock-toggle"
+
+# Noctalia Settings Window (Alternate)
+"Mod+Alt+P" = "spawn noctalia msg settings-toggle"
+
+# Noctalia Settings Window (Shift Alternate)
+"Mod+Shift+Comma" = "spawn noctalia msg settings-toggle"
+
+# Screenshots
+# Screenshot Selected Region
+"Mod+S" = "spawn noctalia msg screenshot-region"
+
+# Screenshot Fullscreen
+"Mod+Ctrl+S" = "spawn noctalia msg screenshot-fullscreen"
+
+# Screenshot & Annotate
+"Mod+Shift+S" = "spawn noctalia msg screenshot-annotate"
+
+# Screenshot & Annotate (Alternate)
+"Mod+Alt+S" = "spawn noctalia msg screenshot-annotate"
+
+# System / Config
+# Reload Umbriel Configuration
+"Mod+Shift+R" = "config-reload"
+
+# Lock Desktop Session
+"Mod+Ctrl+L" = "spawn noctalia msg session lock"
+
+# Toggle Night Light Mode
+"Mod+Shift+N" = "spawn noctalia msg nightlight-force-toggle"
+
+# Apply Matugen Colors to Applications
+"Mod+Alt+T" = "spawn matugen-apply"
+
+# Cheatsheet & Keybind Viewers
+# Search Neovim Cheat Sheet: Super+, (Noctalia) | Ctrl+Super+, (Fuzzel Wide Modal)
+"Mod+Comma" = "spawn bash ~/.config/umbriel/scripts/show-neovim-cheatsheet.sh --noctalia"
+"Mod+Ctrl+Comma" = "spawn bash ~/.config/umbriel/scripts/show-neovim-cheatsheet.sh --fuzzel"
+
+# Search All Keybindings: Super+. (Noctalia) | Ctrl+Super+. (Fuzzel Wide Modal)
+"Mod+Period" = "spawn bash ~/.config/umbriel/scripts/show-keybinds.sh --noctalia"
+"Mod+Ctrl+Period" = "spawn bash ~/.config/umbriel/scripts/show-keybinds.sh --fuzzel"
+
+# =========================================================
+# Hardware & Media Keys
+# =========================================================
+# Brightness Up
+"XF86MonBrightnessUp" = { action = "spawn noctalia msg brightness-up", allow_when_locked = true }
+
+# Brightness Down
+"XF86MonBrightnessDown" = { action = "spawn noctalia msg brightness-down", allow_when_locked = true }
+
+# Mute Audio
+"XF86AudioMute" = { action = "spawn noctalia msg volume-mute", allow_when_locked = true, repeat = false }
+
+# Volume Up
+"XF86AudioRaiseVolume" = { action = "spawn noctalia msg volume-up", allow_when_locked = true }
+
+# Volume Down
+"XF86AudioLowerVolume" = { action = "spawn noctalia msg volume-down", allow_when_locked = true }
+
+# Mute Microphone
+"XF86AudioMicMute" = { action = "spawn noctalia msg mic-mute", allow_when_locked = true, repeat = false }
+
+# Toggle Media Playback
+"XF86AudioPlay" = { action = "spawn noctalia msg media toggle", allow_when_locked = true, repeat = false }
+
+# Next Media Track
+"XF86AudioNext" = { action = "spawn noctalia msg media next", allow_when_locked = true, repeat = false }
+
+# Previous Media Track
+"XF86AudioPrev" = { action = "spawn noctalia msg media previous", allow_when_locked = true, repeat = false }
+
+# =========================================================
+# Mouse & Wheel Binds
+# =========================================================
+# Mousewheel: Window cycling
+"Mod+WheelUp" = "window-focus-left"
+"Mod+WheelDown" = "window-focus-right"
+
+# Mousewheel: Fine-grained resize
+"Mod+Alt+WheelUp" = "window-modify-primary-extent 0.05"
+"Mod+Alt+WheelDown" = "window-modify-primary-extent -0.05"
+
+# Mousewheel: Cycle column preset proportions (scrolling layout)
+"Mod+Ctrl+WheelUp" = "window-cycle-primary-extent"
+"Mod+Ctrl+WheelDown" = "window-cycle-primary-extent-back"
+
+# Middle-click drag: Pan scrolling strip directly with the mouse
+"Mod+MouseMiddle" = "layout-scroll-drag"
+
